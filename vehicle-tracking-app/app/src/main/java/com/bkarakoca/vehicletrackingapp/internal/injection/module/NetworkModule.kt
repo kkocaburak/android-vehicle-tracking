@@ -56,6 +56,7 @@ internal class NetworkModule {
     @Singleton
     fun provideRetrofit(client: Lazy<OkHttpClient>, gson: Gson): Retrofit {
         return Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .callFactory { client.get().newCall(it) }
             .build()

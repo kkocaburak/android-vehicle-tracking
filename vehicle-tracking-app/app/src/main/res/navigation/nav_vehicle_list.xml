@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_vehicle_list"
+    app:startDestination="@id/fragmentVehicleListing">
+
+    <fragment
+        android:id="@+id/fragmentVehicleListing"
+        android:name="com.bkarakoca.vehicletrackingapp.scene.vehicle.vehiclelist.FragmentVehicleListing"
+        android:label="FragmentVehicleListing"
+        tools:layout="@layout/fragment_vehicle_list" />
+</navigation>
