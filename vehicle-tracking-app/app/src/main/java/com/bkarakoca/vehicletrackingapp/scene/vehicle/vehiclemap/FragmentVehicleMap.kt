@@ -40,7 +40,7 @@ class FragmentVehicleMap : BaseFragment<FragmentVehicleMapVM, FragmentVehicleMap
     }
 
     override fun onClick(marker: Marker): Boolean {
-        // TODO :
+        // TODO : you can implement custom action for map marker click
         return true
     }
 
