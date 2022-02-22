@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_vehicle_list"
+    app:startDestination="@id/fragmentVehicleListing">
+
+    <fragment
+        android:id="@+id/fragmentVehicleListing"
+        android:name="com.bkarakoca.vehicletrackingapp.scene.vehicle.vehiclelist.FragmentVehicleListing"
+        android:label="FragmentVehicleListing" >
+        <action
+            android:id="@+id/toFragmentVehicleMap"
+            app:destination="@id/fragmentVehicleMap" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentVehicleMap"
+        android:name="com.bkarakoca.vehicletrackingapp.scene.vehicle.vehiclemap.FragmentVehicleMap"
+        android:label="FragmentVehicleMap" />
+</navigation>

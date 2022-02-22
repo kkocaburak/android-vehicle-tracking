@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VehicleTrackingApp</string>
+
+    <!-- Common Resources -->
+    <string name="common_error_network_connection">Network error, please try again.</string>
+    <string name="common_error_unknown">Unknown error.</string>
+    <string name="common_error_timeout">Timeout error.</string>
+    <!-- Common Resources -->
+
+    <!-- UI Resources -->
+    <string name="header_vehicle_list">Available Vehicles:</string>
+    <!-- UI Resources -->
+
+</resources>
