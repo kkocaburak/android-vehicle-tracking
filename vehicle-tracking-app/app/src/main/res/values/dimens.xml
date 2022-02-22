@@ -14,6 +14,8 @@
     <!-- Margin -->
 
     <!-- Size -->
+    <dimen name="size_divider">2dp</dimen>
+
     <dimen name="size_medium">32dp</dimen>
     <dimen name="size_large">48dp</dimen>
     <dimen name="size_x_large">64dp</dimen>
@@ -21,4 +23,12 @@
     <dimen name="image_medium">64dp</dimen>
     <dimen name="text_medium">24dp</dimen>
     <!-- Size -->
+
+    <!-- Font -->
+    <dimen name="font_large">16sp</dimen>
+    <!-- Font -->
+
+    <!-- Radius -->
+    <dimen name="radius_small">4dp</dimen>
+    <!-- Radius -->
 </resources>

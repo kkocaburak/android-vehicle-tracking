@@ -6,4 +6,9 @@
     <string name="common_error_unknown">Unbekannter Fehler.</string>
     <string name="common_error_timeout">Timeout-Fehler.</string>
     <!-- Common Resources -->
+
+    <!-- UI Resources -->
+    <string name="header_vehicle_list">Verfügbare Fahrzeuge:</string>
+    <!-- UI Resources -->
+
 </resources>

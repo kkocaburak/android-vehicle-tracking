@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CardView_Normal">
+        <item name="cardBackgroundColor">@color/background_item_vehicle_info</item>
+        <item name="cardCornerRadius">@dimen/radius_small</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:textColor">@color/text_item_vehicle_info</item>
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="TextView.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Background_Normal">
+        <item name="backgroundColor">@color/background_item_vehicle_info</item>
+    </style>
+
+</resources>

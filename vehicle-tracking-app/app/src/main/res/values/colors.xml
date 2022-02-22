@@ -20,7 +20,7 @@
     <color name="background_components_light">#FFFFFF</color>
 
     <!--  Other Colors  -->
-    <color name="soft_grey">#E5E5E5</color>
-    <color name="vibrant_blue">#003dff</color>
-    <color name="almost_black_60">#6008090a</color>
+    <color name="background_vehicle_list">#30110d</color>
+    <color name="background_item_vehicle_info">#00154f</color>
+    <color name="text_item_vehicle_info">#f6b60d</color>
 </resources>

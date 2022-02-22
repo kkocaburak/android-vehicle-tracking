@@ -97,6 +97,10 @@ version = [
         mockk                : '1.10.2',
         kotlinReflect        : '1.5.0',
         fragment             : '1.2.5',
+        googleMaps           : '17.0.1',
+        googleLocation       : '18.0.0',
+        googleMapUtils       : '2.2.5',
+        googleMapKtx         : '3.1.0',
 ]
 
 dependencies {
@@ -116,6 +120,13 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$version.navigation"
     implementation "androidx.constraintlayout:constraintlayout:$version.constraintLayout"
     implementation "androidx.preference:preference-ktx:$version.preference"
+
+    // Map
+    implementation "com.google.android.gms:play-services-maps:$version.googleMaps"
+    implementation "com.google.android.gms:play-services-location:$version.googleLocation"
+    implementation "com.google.maps.android:android-maps-utils:$version.googleMapUtils"
+    implementation "com.google.maps.android:maps-ktx:$version.googleMapKtx"
+    implementation "com.google.maps.android:maps-utils-ktx:$version.googleMapKtx"
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$version.lifecycle"
