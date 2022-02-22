@@ -16,7 +16,9 @@ class AdapterVehicleList : BaseListAdapter<ItemVehicleInfoBinding, VehicleInfoUI
         binding.executeAfter {
             vehicleItem = item
         }
-        onVehicleClickListener?.invoke(item)
+        binding.cardViewRoot.setOnClickListener {
+            onVehicleClickListener?.invoke(item)
+        }
     }
 
     fun setOnClickListener(onVehicleClickListener: ((VehicleInfoUIModel) -> Unit)?) {

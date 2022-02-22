@@ -10,40 +10,60 @@
             type="com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.VehicleInfoUIModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clRoot"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_root"
+        style="@style/CardView_Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_large">
+        android:layout_marginTop="@dimen/margin_medium">
 
-        <ImageView
-            android:id="@+id/image_vehicle"
-            android:layout_width="@dimen/image_medium"
-            android:layout_height="@dimen/image_medium"
-            android:src="@{vehicleItem.imageRes}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_medium"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_vehicle"
-            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/image_vehicle"
+                android:layout_width="@dimen/image_medium"
+                android:layout_height="@dimen/image_medium"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:imageResource="@{vehicleItem.drawableRes}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
-            <TextView
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/image_vehicle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_vehicle"
+                app:layout_constraintTop_toTopOf="@id/image_vehicle">
+
+                <TextView
+                    style="@style/TextView.Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_medium"
+                    android:text="@{vehicleItem.fleetType}" />
+
+                <TextView
+                    style="@style/TextView.Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_medium"
+                    android:text="@{vehicleItem.id}" />
+            </LinearLayout>
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_medium"
-                android:text="@{vehicleItem.fleetType}" />
+                android:layout_height="@dimen/size_divider"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_vehicle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_medium"
-                android:text="@{vehicleItem.id}" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </layout>

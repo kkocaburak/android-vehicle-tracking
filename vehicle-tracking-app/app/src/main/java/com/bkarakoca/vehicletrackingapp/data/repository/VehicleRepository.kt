@@ -1,7 +1,7 @@
 package com.bkarakoca.vehicletrackingapp.data.repository
 
 import com.bkarakoca.vehicletrackingapp.data.remote.datasource.VehicleRemoteDataSource
-import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.CoordinateModel
+import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.LocationModel
 import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.VehicleInfoMapper
 import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.VehicleInfoUIModel
 import kotlinx.coroutines.flow.Flow
@@ -11,8 +11,8 @@ import javax.inject.Inject
 
 interface VehicleRepository {
     suspend fun fetchVehicleList(
-        firstCoordinate: CoordinateModel,
-        secondCoordinate: CoordinateModel
+        firstLocation: LocationModel,
+        secondLocation: LocationModel
     ): Flow<List<VehicleInfoUIModel>>
 }
 
@@ -22,10 +22,10 @@ class VehicleRepositoryImpl @Inject constructor(
 ) : VehicleRepository {
 
     override suspend fun fetchVehicleList(
-        firstCoordinate: CoordinateModel,
-        secondCoordinate: CoordinateModel
+        firstLocation: LocationModel,
+        secondLocation: LocationModel
     ): Flow<List<VehicleInfoUIModel>> = flow {
-        remoteDataSource.fetchVehicleList(firstCoordinate, secondCoordinate).collect { response ->
+        remoteDataSource.fetchVehicleList(firstLocation, secondLocation).collect { response ->
             emit(vehicleInfoMapper.toUIModel(response))
         }
     }

@@ -6,15 +6,24 @@ import javax.inject.Inject
 class VehicleInfoMapper @Inject constructor() {
 
     fun toUIModel(responseModel: VehicleInfoResponseModel): List<VehicleInfoUIModel> {
-        return responseModel.vehicleList.map {
-            VehicleInfoUIModel(
-                id = it.id.toString(),
-                latitude = it.coordinate?.latitude,
-                longitude = it.coordinate?.longitude,
-                fleetType = it.fleetType,
-                heading = it.heading,
-                imageRes = R.drawable.ic_launcher_foreground
-            )
+        return responseModel.vehicleList.sortedByDescending { it.id }.map {
+            with (it) {
+                VehicleInfoUIModel(
+                    id = id.toString(),
+                    location = getVehicleLocation(),
+                    fleetType = fleetType,
+                    heading = heading,
+                    drawableRes = getDrawableByFleetType(fleetType)
+                )
+            }
+        }
+    }
+
+    private fun getDrawableByFleetType(fleetType: String?) : Int {
+        return when (fleetType) {
+            "TAXI" -> R.drawable.ic_taxi
+            "POOLING" -> R.drawable.ic_pooling
+            else -> R.drawable.ic_default_vehicle
         }
     }
 

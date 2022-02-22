@@ -15,6 +15,10 @@
         android:theme="@style/Theme.VehicleTrackingApp"
         android:fullBackupContent="@xml/backup_descriptor">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDGdGZUB5b_PfD90TvnkoHvW-JJdETDYjg"/>
+
         <activity
             android:name="com.bkarakoca.vehicletrackingapp.scene.splash.SplashActivity"
             android:noHistory="true"

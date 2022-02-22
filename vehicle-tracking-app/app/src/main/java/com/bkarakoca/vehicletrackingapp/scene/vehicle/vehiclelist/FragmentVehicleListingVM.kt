@@ -3,7 +3,7 @@ package com.bkarakoca.vehicletrackingapp.scene.vehicle.vehiclelist
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bkarakoca.vehicletrackingapp.base.BaseViewModel
-import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.CoordinateModel
+import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.LocationModel
 import com.bkarakoca.vehicletrackingapp.data.remote.model.vehicle.VehicleInfoUIModel
 import com.bkarakoca.vehicletrackingapp.domain.vehicle.GetVehicleListUseCase
 import com.bkarakoca.vehicletrackingapp.internal.extension.launch
@@ -19,12 +19,12 @@ class FragmentVehicleListingVM @Inject constructor(
     private val _vehicleList = MutableLiveData<List<VehicleInfoUIModel>>()
     val vehicleList: LiveData<List<VehicleInfoUIModel>> get() = _vehicleList
 
-    private val firstCoordinate = CoordinateModel(
+    private val firstCoordinate = LocationModel(
         latitude = 53.694865,
         longitude = 9.757589
     )
 
-    private val secondCoordinate = CoordinateModel(
+    private val secondCoordinate = LocationModel(
         latitude = 53.394655,
         longitude = 10.099891
     )
@@ -36,12 +36,12 @@ class FragmentVehicleListingVM @Inject constructor(
                 secondCoordinate
             )
         ).collect {
-            _vehicleList.postValue(it)
+            _vehicleList.value = it
         }
     }
 
-    fun onVehicleClicked(vehicleInfo: VehicleInfoUIModel) {
-        // TODO : navigate map
+    fun onVehicleClicked() {
+        navigate(FragmentVehicleListingDirections.toFragmentVehicleMap())
     }
 
 }
